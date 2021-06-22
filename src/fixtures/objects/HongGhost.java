@@ -21,6 +21,6 @@ public class HongGhost extends Fixture implements Interactive {
 	
 	public HongGhost()
 	{
-		super("HongGhost", "A floating white figure.", "A lost soul that can't leave until he's found his cologne.");
+		super("HongGhost", "Woah, a mysterious floating white figure.", "A lost soul named Hong Wu that can't leave this world until he's found his cologne.");
 	}
 }

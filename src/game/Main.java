@@ -28,13 +28,13 @@ public class Main {
 	
 	
 	private static void printRoom(Player player) {
-		System.out.println("The " + player.currentRoom.name + ".\n\n" + player.currentRoom.longDescription);
-		System.out.println("item:" + player.currentRoom.roomFeature.printName() + "     " + player.currentRoom.roomFeature.printShortDescription() + "\n\nExits:");
+		System.out.println("You are in the " + player.currentRoom.name + ".\n" + player.currentRoom.longDescription);
+		System.out.println("This room contains the following item(s) - " + player.currentRoom.roomFeature.printName() + ": " + player.currentRoom.roomFeature.printShortDescription() + "\nExit(s) - ");
 		for(int i = 0; i < player.currentRoom.numExits; ++i)
 		{
 			System.out.println(player.currentRoom.getExits()[i].name + ": " + player.currentRoom.getExits()[i].shortDescription  + "\n");
 		}
-		System.out.println("type 'enter [room]' or 'item' or 'quit'\n");
+		System.out.println("Type 'enter [exit]', 'item', or 'quit'.\n");
 	}
 
 	
