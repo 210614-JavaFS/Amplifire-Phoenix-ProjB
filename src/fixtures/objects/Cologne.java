@@ -23,4 +23,10 @@ public class Cologne extends Fixture implements Interactive {
 	{
 		super("Cologne", "It stings the nostrils... in a good way.", "60% of the time, it works every time.");
 	}
+
+	@Override
+	public void Interact() {
+		// TODO Auto-generated method stub
+		
+	}
 }
