@@ -29,7 +29,6 @@ public class RoomManager {
 		//bedroom.addExit(secondBedroom, secondBathroom); 
 		//basement.addExit(firstFloorHall);
 		
-		
 		rooms.add(foyer);
 		rooms.add(study);
 		rooms.add(bedroom);
