@@ -4,6 +4,8 @@ import fixtures.Fixture;
 
 public class BrokenMirror extends Fixture implements Interactive{
 
+	private boolean isBroken;
+	
 	public BrokenMirror() {
 		super(
 				"A Broken Mirror", 
@@ -13,6 +15,7 @@ public class BrokenMirror extends Fixture implements Interactive{
 				+ "should be.\n"
 				+ "It looks like it's barely held together and might fall apart at any second"
 		);
+		isBroken = false;
 	}
 
 	@Override
@@ -42,15 +45,19 @@ public class BrokenMirror extends Fixture implements Interactive{
 	//You could then change the short description or long description to fit it's broken state within this method using this.name or this.shortDescription
 	@Override
 	public void Interact() {
-		System.out.println("\n"
-				+ "You touch the mirror.\n"
-				+ "All of the pieces of glass fall on the floor with small clinking noises.\n"
-				+ "There's not much left of it now");
-		
-		this.name = "A Mirror Frame";
-		this.shortDescription = "After being touched, it's no longer the same";
-		this.longDescription = "It is basically just the frame of a mirror now. Nothing special";
-		
+			if (!isBroken) {
+			System.out.println("\n"
+					+ "You touch the mirror.\n"
+					+ "All of the pieces of glass fall on the floor with small clinking noises.\n"
+					+ "There's not much left of it now");
+			
+			this.name = "A Mirror Frame";
+			this.shortDescription = "After being touched, it's no longer the same";
+			this.longDescription = "It is basically just the frame of a mirror now. Nothing special";
+		}
+			else {
+				System.out.println("There is nothing but a mirror frame now. It's probably best not to pick up the glass shards.");
+			}
 		
 	}
 
