@@ -17,21 +17,17 @@ public class RoomManager {
 		Foyer foyer =  new Foyer();
 		Study study = new Study();
 		Bedroom bedroom = new Bedroom();
-    UpstairsBathroom uBathroom = new UpstairsBathroom();
-		Room[] foyerExits = {study};
-		Room[] studyExits = {foyer};
-    Room[] uBathroomExits = {uBathroom};
-		//Room[] bedroomExits = {secondBedroom, secondBathroom};
+		UpstairsBathroom uBathroom = new UpstairsBathroom();
 
 		foyer.addExit(study);
 		study.addExit(foyer);
-    uBathroom.addExit(uBathroom);
+		//uBathroom.addExit(uBathroom);						PLEASE DON'T ADD AN EXIT TO ITSELF
 		//bedroom.addExit(secondBedroom, secondBathroom); 
 		rooms.add(foyer);
 		rooms.add(study);
 		rooms.add(bedroom);
-    rooms.add(uBathroom);
-		startingRoom = foyer;
+		rooms.add(uBathroom);
+		startingRoom = bedroom;
 	}
 	
 	

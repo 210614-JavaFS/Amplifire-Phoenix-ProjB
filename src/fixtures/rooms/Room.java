@@ -66,7 +66,6 @@ public abstract class Room extends Fixture{
 		return false;
 	}
 	
-	
 	public Interactive getInteractive(String itemName) {
 		
 		for(int i = 0; i < roomFeatures.size(); i++) {
@@ -76,4 +75,6 @@ public abstract class Room extends Fixture{
 		System.out.println("ERROR: We could not find that item");
 		return null;
 	}
+
+	public abstract void interactWithInteractive(Interactive item);
 }

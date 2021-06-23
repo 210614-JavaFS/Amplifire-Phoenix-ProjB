@@ -76,7 +76,7 @@ public class Main {
 		case "enter":
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
 			{
-				if(player.currentRoom.getExit(i).name.contains(command[1]))
+				if(player.currentRoom.getExit(i).name.contains(command[1].toLowerCase()))
 				{
 								player.currentRoom = player.currentRoom.getExit(i);
 								printRoom(player);
@@ -89,6 +89,10 @@ public class Main {
 			if (player.currentRoom.hasInteractive(command[1])) {
 				printItem(player.currentRoom.getInteractive(command[1]));
 			}
+		break;
+		
+		case "interact":
+			
 		break;
 		case "quit":
 			System.out.println("Exiting Program.");
