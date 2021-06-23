@@ -33,14 +33,11 @@ public class RoomManager {
 		foyer.addExit(study);
 		foyer.addExit(upstairsHallway);
 		study.addExit(foyer);
-
 		//uBathroom.addExit(uBathroom);           PLEASE DON'T MAKE AN EXIT TO ITSELF
 		bedroom.addExit(upstairsHallway); 
-
 		foyer.addExit(dBathroom);
 		dBathroom.addExit(foyer);
 		//kitchen.addExit(diningRoom, livingRoom);
-
 		basement.addExit(foyer);
 		upstairsHallway.addExit(foyer);
 		upstairsHallway.addExit(master);
