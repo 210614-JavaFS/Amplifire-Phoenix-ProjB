@@ -2,7 +2,7 @@ package fixtures.objects;
 
 import fixtures.Fixture;
 
-public class HongGhost extends Fixture implements Interactive {
+public class TV extends Fixture implements Interactive {
 
 
 	public String printLongDescription() {
@@ -19,9 +19,9 @@ public class HongGhost extends Fixture implements Interactive {
 		return this.name;
 	}
 	
-	public HongGhost()
+	public TV()
 	{
-		super("HongGhost", "Woah, a mysterious floating white figure.", "A lost soul named Hong Wu that can't leave this world until he's found his cologne.");
+		super("TV", "A large flatscreen television.", "A 50 inch Sceptre flat screen television, I wonder what's there to watch.");
 	}
 
 	@Override
