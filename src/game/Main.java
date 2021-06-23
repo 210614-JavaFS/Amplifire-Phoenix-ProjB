@@ -43,7 +43,7 @@ public class Main {
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i) {
 				System.out.println(player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription  + "\n");
 			}
-			System.out.println("Type 'enter [exit]', 'item', or 'quit'.\n");
+			System.out.println("Type \"enter [exit]\", \"look [item]\", \"interact [item]\", or \"quit\".\n");
 		}
 		
 	private static void printItem(Interactive item) {
@@ -73,7 +73,7 @@ public class Main {
 	
 	private static void parse(String[] command, Player player) {
 		// gets first string
-		switch(command[0])
+		switch(command[0].toLowerCase())
 		{
 		// handles room switching
 		case "enter":
@@ -90,7 +90,7 @@ public class Main {
 		
 		
 		//handles item
-		case "item":
+		case "look":
 			if (player.currentRoom.hasInteractive(command[1])) {
 				printItem(player.currentRoom.getInteractive(command[1]));
 			}
