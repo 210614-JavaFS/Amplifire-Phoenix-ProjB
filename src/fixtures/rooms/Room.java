@@ -24,7 +24,7 @@ public abstract class Room extends Fixture{
 		return Exits.get(choice);
 	}
 	
-	//Returns a ROom object given the name of the Room.
+	//Returns a Room object given the name of the Room.
 	//This method assumes that the room is
 	public Room getExit(String roomName) {
 		Room room = null;
