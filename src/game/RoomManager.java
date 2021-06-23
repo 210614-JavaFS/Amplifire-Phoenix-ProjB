@@ -1,10 +1,12 @@
 package game;
 
+import fixtures.rooms.Bedroom;
 import java.util.ArrayList;
 import fixtures.rooms.Foyer;
 import fixtures.rooms.Room;
 import fixtures.rooms.Study;
 import fixtures.rooms.UpstairsBathroom;
+
 import fixtures.rooms.Basement;
 import fixtures.rooms.Bedroom;
 
@@ -19,16 +21,10 @@ public class RoomManager {
 		Bedroom bedroom = new Bedroom();
 		UpstairsBathroom uBathroom = new UpstairsBathroom();
 		Basement basement = new Basement();
-		
-		Room[] foyerExits = {study};
-		Room[] studyExits = {foyer};
-		Room[] uBathroomExits = {uBathroom};
-		//Room[] bedroomExits = {secondBedroom, secondBathroom};
-		//Room[] basementExit = {firstFloorHall}
 
 		foyer.addExit(study);
 		study.addExit(foyer);
-		uBathroom.addExit(uBathroom);
+		//uBathroom.addExit(uBathroom);           PLEASE DON'T MAKE AN EXIT TO ITSELF
 		//bedroom.addExit(secondBedroom, secondBathroom); 
 		//basement.addExit(firstFloorHall);
 		
@@ -38,6 +34,7 @@ public class RoomManager {
 		rooms.add(bedroom);
 		rooms.add(uBathroom);
 		rooms.add(basement);
+
 		startingRoom = foyer;
 	}
 	
