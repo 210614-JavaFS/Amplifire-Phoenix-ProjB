@@ -27,9 +27,8 @@ public class RoomManager {
 		foyer.addExit(study);
 		foyer.addExit(upstairsHallway);
 		study.addExit(foyer);
-
 		//uBathroom.addExit(uBathroom);           PLEASE DON'T MAKE AN EXIT TO ITSELF
-		//bedroom.addExit(secondBedroom, secondBathroom); 
+		bedroom.addExit(upstairsHallway); 
 		basement.addExit(foyer);
 		upstairsHallway.addExit(foyer);
 		upstairsHallway.addExit(master);
