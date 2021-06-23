@@ -21,12 +21,11 @@ public class Cologne extends Fixture implements Interactive {
 	
 	public Cologne()
 	{
-		super("Cologne", "It stings the nostrils... in a good way.", "60% of the time, it works every time.");
+		super("Cologne", "Odeon brand cologne, it's illegal in nine countries.", "60% of the time, it works every time.");
 	}
 
 	@Override
 	public void Interact() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("Time to musk up.  You apply the cologne.  It's a formidable scent!  It stings the nostrils... in a good way.");
 	}
 }

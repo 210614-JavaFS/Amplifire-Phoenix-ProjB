@@ -54,6 +54,7 @@ public class BrokenMirror extends Fixture implements Interactive{
 			this.name = "A Mirror Frame";
 			this.shortDescription = "After being touched, it's no longer the same";
 			this.longDescription = "It is basically just the frame of a mirror now. Nothing special";
+			isBroken = true;
 		}
 			else {
 				System.out.println("There is nothing but a mirror frame now. It's probably best not to pick up the glass shards.");

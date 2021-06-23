@@ -7,6 +7,7 @@ import fixtures.rooms.FirstFloorBathroom;
 import java.util.ArrayList;
 import fixtures.rooms.Foyer;
 import fixtures.rooms.Kitchen;
+import fixtures.rooms.LivingRoom;
 import fixtures.rooms.MasterBedroom;
 import fixtures.rooms.Room;
 import fixtures.rooms.Study;
@@ -29,6 +30,7 @@ public class RoomManager {
 		Kitchen kitchen = new Kitchen();
 		UpstairsHallway upstairsHallway = new UpstairsHallway();
 		FirstFloorBathroom dBathroom = new FirstFloorBathroom();
+		LivingRoom livingRoom = new LivingRoom();
 
 		foyer.addExit(study);
 		foyer.addExit(upstairsHallway);
@@ -44,6 +46,10 @@ public class RoomManager {
 		upstairsHallway.addExit(uBathroom);
 		upstairsHallway.addExit(bedroom);
 		master.addExit(upstairsHallway);
+		livingRoom.addExit(kitchen);
+		livingRoom.addExit(foyer);
+		foyer.addExit(livingRoom);
+		kitchen.addExit(livingRoom);
 		uBathroom.addExit(upstairsHallway);           
 		bedroom.addExit(upstairsHallway); 
 		

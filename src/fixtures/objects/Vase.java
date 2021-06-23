@@ -20,13 +20,12 @@ public class Vase extends Fixture implements Interactive {
 
 	public Vase()
 	{
-		super("Vase", "A short description of a vase", "A long description of a vase");
+		super("Vase", "An unassuming vase.", "A dusty ornate vase made of porcelein.");
 		
 	}
 
 	@Override
 	public void Interact() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("You look into the vase, there is debris in the vase that looks like some kind of decayed plants.");
 	}
 }

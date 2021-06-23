@@ -102,6 +102,12 @@ public class Main {
 				player.currentRoom.interactWithInteractive(command[1]);
 			}
 		break;
+		
+		case "":
+			System.out.println();
+			printRoom(player);
+		break;
+		
 		case "quit":
 			System.out.println("Exiting Program.");
 			willQuit = true;

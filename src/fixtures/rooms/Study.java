@@ -8,7 +8,7 @@ public class Study extends Room {
 	
 	
 	public Study() {
-		super("study", "Short description of a study", "It contains many leatherbound books and smells of rich mohagany.");
+		super("study", "A well furnished study.", "It contains many leatherbound books and smells of rich mohagany.");
 		this.addInteractive(new Cologne());
 	}
 
