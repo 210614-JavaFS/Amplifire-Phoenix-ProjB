@@ -39,9 +39,15 @@ public class Main {
 		
 		for(int i = 0; i < player.currentRoom.getNumExits(); ++i)
 		{
-			System.out.println(player.currentRoom.getExit(i).name + ": " + player.currentRoom.getExit(i).shortDescription  + "\n");
+			System.out.println("room: " + player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription  + "\n");
 		}
 		System.out.println("type 'enter [room]' or 'item [thing]' or 'quit'\n");
+	}
+	
+	private static void printItem(Interactive item) {
+		System.out.println(item.printName() + " - " + item.printShortDescription());
+		System.out.println("\n");
+		System.out.println(item.printLongDescription());
 	}
 
 	
@@ -71,7 +77,7 @@ public class Main {
 		case "enter":
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
 			{
-				if(command[1].equals(player.currentRoom.getExit(i).name))
+				if(player.currentRoom.getExit(i).name.contains(command[1]))
 				{
 								player.currentRoom = player.currentRoom.getExit(i);
 								printRoom(player);
@@ -81,7 +87,9 @@ public class Main {
 		break;
 		//handles item
 		case "item":
-			System.out.println(player.currentRoom.roomFeatures.get(0).printLongDescription() + "\n");
+			if (player.currentRoom.hasInteractive(command[1])) {
+				printItem(player.currentRoom.getInteractive(command[1]));
+			}
 		break;
 		case "quit":
 			System.out.println("Exiting Program.");

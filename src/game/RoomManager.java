@@ -14,14 +14,13 @@ public class RoomManager {
 	{
 		Foyer foyer =  new Foyer();
 		Study study = new Study();
-		Room[] foyerExits = {study};
-		Room[] studyExits = {foyer};
 		foyer.addExit(study);
 		study.addExit(foyer);
 		rooms.add(foyer);
 		rooms.add(study);
 		startingRoom = foyer;
 	}
+	
 	
 
 	

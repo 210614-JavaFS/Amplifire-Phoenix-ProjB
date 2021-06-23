@@ -58,6 +58,22 @@ public abstract class Room extends Fixture{
 		roomFeatures.add(item);
 	}
 
+	public boolean hasInteractive(String itemName) {
+		for(int i = 0; i < roomFeatures.size(); i++) {
+			if (roomFeatures.get(i).printName().toLowerCase().equals(itemName.toLowerCase()))
+				return true;
+		}
+		return false;
+	}
 	
 	
+	public Interactive getInteractive(String itemName) {
+		
+		for(int i = 0; i < roomFeatures.size(); i++) {
+			if (roomFeatures.get(i).printName().toLowerCase().equals(itemName.toLowerCase()))
+				return roomFeatures.get(i);
+		}
+		System.out.println("ERROR: We could not find that item");
+		return null;
+	}
 }
