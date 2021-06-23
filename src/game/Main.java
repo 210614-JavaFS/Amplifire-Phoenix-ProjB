@@ -71,7 +71,7 @@ public class Main {
 		case "enter":
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
 			{
-				if(command[1].equals(player.currentRoom.getExit(i).name))
+				if(player.currentRoom.getExit(i).name.contains(command[1]))
 				{
 								player.currentRoom = player.currentRoom.getExit(i);
 								printRoom(player);
