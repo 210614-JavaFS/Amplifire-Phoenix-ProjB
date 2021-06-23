@@ -8,7 +8,7 @@ public class Room extends Fixture{
 	Room[] Exits;
 	public Interactive roomFeature;;
 	public int numExits;
-	public Room(String name, String shortDescription, String longDescription, int numExits, Interactive roomFeature) {
+	public Room(String name, String shortDescription, String longDescription) {
 		super(name, shortDescription, longDescription);
 		this.numExits = numExits;
 		this.Exits = new Room[numExits]; 
