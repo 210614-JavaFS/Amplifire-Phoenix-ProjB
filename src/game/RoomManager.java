@@ -1,7 +1,8 @@
 package game;
 
-import java.util.ArrayList;
 
+import fixtures.rooms.Bedroom;
+import java.util.ArrayList;
 import fixtures.rooms.Foyer;
 import fixtures.rooms.Room;
 import fixtures.rooms.Study;
@@ -15,16 +16,21 @@ public class RoomManager {
 	{
 		Foyer foyer =  new Foyer();
 		Study study = new Study();
-		UpstairsBathroom uBathroom = new UpstairsBathroom();
+		Bedroom bedroom = new Bedroom();
+    UpstairsBathroom uBathroom = new UpstairsBathroom();
 		Room[] foyerExits = {study};
 		Room[] studyExits = {foyer};
-		Room[] uBathroomExits = {uBathroom};
+    Room[] uBathroomExits = {uBathroom};
+		//Room[] bedroomExits = {secondBedroom, secondBathroom};
+
 		foyer.addExit(study);
 		study.addExit(foyer);
-		uBathroom.addExit(uBathroom);
+    uBathroom.addExit(uBathroom);
+		//bedroom.addExit(secondBedroom, secondBathroom); 
 		rooms.add(foyer);
 		rooms.add(study);
-		rooms.add(uBathroom);
+		rooms.add(bedroom);
+    rooms.add(uBathroom);
 		startingRoom = foyer;
 	}
 	

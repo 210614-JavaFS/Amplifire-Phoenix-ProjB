@@ -30,18 +30,17 @@ public class Main {
 	
 	
 	private static void printRoom(Player player) {
-		System.out.println("The " + player.currentRoom.name + ".\n\n" + player.currentRoom.longDescription);
-		
-		for(int i = 0; i < player.currentRoom.roomFeatures.size(); i++) {
+		System.out.println("You are in the " + player.currentRoom.name + ".\n" + player.currentRoom.longDescription);
+    for(int i = 0; i < player.currentRoom.roomFeatures.size(); i++) {
 			Interactive temp = player.currentRoom.roomFeatures.get(i);
-			System.out.println("item: " + temp.printName() + "  -  " + temp.printShortDescription());
+			System.out.println("This room contains the following item(s) - " + temp.printName() + ": " + temp.printShortDescription());
 		}
-		
+    System.out.println("Exits - ");
 		for(int i = 0; i < player.currentRoom.getNumExits(); ++i)
 		{
 			System.out.println("room: " + player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription  + "\n");
 		}
-		System.out.println("type 'enter [room]' or 'item [thing]' or 'quit'\n");
+		System.out.println("Type 'enter [exit]', 'item', or 'quit'.\n");
 	}
 	
 	private static void printItem(Interactive item) {
