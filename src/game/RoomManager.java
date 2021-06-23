@@ -18,14 +18,14 @@ public class RoomManager {
 		Bedroom bedroom = new Bedroom();
 		Room[] foyerExits = {study};
 		Room[] studyExits = {foyer};
-    //Room[] bedroomExits = {secondBedroom, secondBathroom};
+		//Room[] bedroomExits = {secondBedroom, secondBathroom};
 
 		foyer.addExit(study);
 		study.addExit(foyer);
-    //bedroom.addExit(secondBedroom, secondBathroom); 
+		//bedroom.addExit(secondBedroom, secondBathroom); 
 		rooms.add(foyer);
 		rooms.add(study);
-    rooms.add(bedroom);
+		rooms.add(bedroom);
 
 		startingRoom = foyer;
 	}

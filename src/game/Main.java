@@ -35,6 +35,7 @@ public class Main {
 			Interactive temp = player.currentRoom.roomFeatures.get(i);
 			System.out.println("This room contains the following item(s) - " + temp.printName() + ": " + temp.printShortDescription());
 		}
+    System.out.println("Exits - ");
 		for(int i = 0; i < player.currentRoom.getNumExits(); ++i)
 		{
 			System.out.println(player.currentRoom.getExit(i).name + ": " + player.currentRoom.getExit(i).shortDescription  + "\n");
