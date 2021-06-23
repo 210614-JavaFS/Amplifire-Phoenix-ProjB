@@ -21,4 +21,3 @@ public class Mirror extends Fixture implements Interactive {
 	}
 
 }
-

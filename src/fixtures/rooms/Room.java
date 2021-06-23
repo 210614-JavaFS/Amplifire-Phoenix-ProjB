@@ -76,5 +76,7 @@ public abstract class Room extends Fixture{
 		return null;
 	}
 
-	//public abstract void interactWithInteractive(Interactive item);
+	public void interactWithInteractive(Interactive item) {
+		getInteractive(item.printName()).Interact();
+	}
 }
