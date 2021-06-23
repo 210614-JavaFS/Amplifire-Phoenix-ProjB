@@ -2,7 +2,8 @@ package fixtures.objects;
 
 import fixtures.Fixture;
 
-public class Mirror extends Fixture implements Interactive {
+public class Skeleton extends Fixture implements Interactive {
+
 
 	public String printLongDescription() {
 		return this.longDescription;
@@ -11,13 +12,13 @@ public class Mirror extends Fixture implements Interactive {
 	public String printShortDescription() {
 		return this.shortDescription;
 	}
-
-	public String printName() {
+	
+	public String printName() {		
 		return this.name;
 	}
 	
-	public Mirror() {
-		super("Mirror", "A mirror on the back of the bathroom door.", "This mirror has someone living in it.  A hand beckons to you.");
+	public Skeleton() {
+		super("A Skeleton", "A pile of bones.", "You see an old dusty skeleton laying on the floor. When you get closer you see a note that says, \"Find a key to escape the Haunted House!\"");
 	}
 
 	@Override
@@ -25,5 +26,5 @@ public class Mirror extends Fixture implements Interactive {
 		// TODO Auto-generated method stub
 		
 	}
-
 }
+

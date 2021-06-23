@@ -23,4 +23,10 @@ public class TV extends Fixture implements Interactive {
 	{
 		super("TV", "A large flatscreen television.", "A 50 inch Sceptre flat screen television, I wonder what's there to watch.");
 	}
+
+	@Override
+	public void Interact() {
+		// TODO Auto-generated method stub
+		
+	}
 }
