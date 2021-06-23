@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import fixtures.objects.Interactive;
+
 public class Main {
 
 	public static RoomManager roomManager = new RoomManager();
@@ -29,10 +31,13 @@ public class Main {
 	
 	private static void printRoom(Player player) {
 		System.out.println("You are in the " + player.currentRoom.name + ".\n" + player.currentRoom.longDescription);
-		System.out.println("This room contains the following item(s) - " + player.currentRoom.roomFeature.printName() + ": " + player.currentRoom.roomFeature.printShortDescription() + "\nExit(s) - ");
-		for(int i = 0; i < player.currentRoom.numExits; ++i)
+    for(int i = 0; i < player.currentRoom.roomFeatures.size(); i++) {
+			Interactive temp = player.currentRoom.roomFeatures.get(i);
+			System.out.println("This room contains the following item(s) - " + temp.printName() + ": " + temp.printShortDescription());
+		}
+		for(int i = 0; i < player.currentRoom.getNumExits(); ++i)
 		{
-			System.out.println(player.currentRoom.getExits()[i].name + ": " + player.currentRoom.getExits()[i].shortDescription  + "\n");
+			System.out.println(player.currentRoom.getExit(i).name + ": " + player.currentRoom.getExit(i).shortDescription  + "\n");
 		}
 		System.out.println("Type 'enter [exit]', 'item', or 'quit'.\n");
 	}
@@ -62,11 +67,11 @@ public class Main {
 		{
 		// handles room switching
 		case "enter":
-			for(int i = 0; i < player.currentRoom.numExits; ++i)	
+			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
 			{
-				if(command[1].equals(player.currentRoom.getExits()[i].name))
+				if(command[1].equals(player.currentRoom.getExit(i).name))
 				{
-								player.currentRoom = player.currentRoom.getExits()[i];
+								player.currentRoom = player.currentRoom.getExit(i);
 								printRoom(player);
 								return;
 				}
@@ -74,7 +79,7 @@ public class Main {
 		break;
 		//handles item
 		case "item":
-			System.out.println(player.currentRoom.roomFeature.printLongDescription() + "\n");
+			System.out.println(player.currentRoom.roomFeatures.get(0).printLongDescription() + "\n");
 		break;
 		case "quit":
 			System.out.println("Exiting Program.");
