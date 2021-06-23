@@ -33,7 +33,7 @@ public class RoomManager {
 		rooms.add(uBathroom);
 		rooms.add(basement);
 
-		startingRoom = foyer;
+		startingRoom = basement;
 	}
 	
 	
