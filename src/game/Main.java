@@ -39,11 +39,12 @@ public class Main {
 				System.out.println(temp.printName() + " - " + temp.printShortDescription());
 			}
 	    System.out.println("");
-	    System.out.println("Exits: ");
+	    System.out.println("Connecting rooms: ");
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i) {
-				System.out.println(player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription  + "\n");
+				System.out.println(player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription);
 			}
-			System.out.println("Type \"enter [exit]\", \"look [item]\", \"interact [item]\", or \"quit\".\n");
+			System.out.println();
+			System.out.println("Type \"enter [room]\", \"look [item]\", \"interact [item]\", or \"quit\".\n".toUpperCase());
 		}
 		
 	private static void printItem(Interactive item) {
@@ -79,7 +80,7 @@ public class Main {
 		case "enter":
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
 			{
-				if(player.currentRoom.getExit(i).name.contains(command[1].toLowerCase()))
+				if(player.currentRoom.getExit(i).name.toLowerCase().contains(command[1].toLowerCase()))
 				{
 								player.currentRoom = player.currentRoom.getExit(i);
 								printRoom(player);
