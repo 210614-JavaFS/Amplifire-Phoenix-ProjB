@@ -20,4 +20,10 @@ public class Mirror extends Fixture implements Interactive {
 		super("Mirror", "A mirror on the back of the bathroom door.", "This mirror has someone living in it.  A hand beckons to you.");
 	}
 
+	@Override
+	public void Interact() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -6,9 +6,7 @@ import fixtures.rooms.Foyer;
 import fixtures.rooms.Room;
 import fixtures.rooms.Study;
 import fixtures.rooms.UpstairsBathroom;
-
 import fixtures.rooms.Basement;
-import fixtures.rooms.Bedroom;
 
 public class RoomManager {
 	public static Room startingRoom;

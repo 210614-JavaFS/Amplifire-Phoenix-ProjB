@@ -87,6 +87,8 @@ public class Main {
 				}
 			}
 		break;
+		
+		
 		//handles item
 		case "item":
 			if (player.currentRoom.hasInteractive(command[1])) {
@@ -95,7 +97,9 @@ public class Main {
 		break;
 		
 		case "interact":
-			
+			if(player.currentRoom.hasInteractive(command[1])) {
+				player.currentRoom.interactWithInteractive(command[1]);
+			}
 		break;
 		case "quit":
 			System.out.println("Exiting Program.");
