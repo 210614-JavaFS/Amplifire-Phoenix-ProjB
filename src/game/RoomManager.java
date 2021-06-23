@@ -6,9 +6,8 @@ import fixtures.rooms.Foyer;
 import fixtures.rooms.Room;
 import fixtures.rooms.Study;
 import fixtures.rooms.UpstairsBathroom;
-
 import fixtures.rooms.Basement;
-import fixtures.rooms.Bedroom;
+
 
 public class RoomManager {
 	public static Room startingRoom;
@@ -26,8 +25,7 @@ public class RoomManager {
 		study.addExit(foyer);
 		//uBathroom.addExit(uBathroom);           PLEASE DON'T MAKE AN EXIT TO ITSELF
 		//bedroom.addExit(secondBedroom, secondBathroom); 
-		//basement.addExit(firstFloorHall);
-		
+		basement.addExit(foyer);
 		
 		rooms.add(foyer);
 		rooms.add(study);
