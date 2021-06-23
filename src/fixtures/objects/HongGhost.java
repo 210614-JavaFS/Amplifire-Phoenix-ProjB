@@ -2,7 +2,7 @@ package fixtures.objects;
 
 import fixtures.Fixture;
 
-public class Cologne extends Fixture implements Interactive {
+public class HongGhost extends Fixture implements Interactive {
 
 
 	public String printLongDescription() {
@@ -19,8 +19,8 @@ public class Cologne extends Fixture implements Interactive {
 		return this.name;
 	}
 	
-	public Cologne()
+	public HongGhost()
 	{
-		super("Cologne", "It stings the nostrils... in a good way.", "60% of the time, it works every time.");
+		super("HongGhost", "Woah, a mysterious floating white figure.", "A lost soul named Hong Wu that can't leave this world until he's found his cologne.");
 	}
 }
