@@ -31,18 +31,21 @@ public class Main {
 	
 	private static void printRoom(Player player) {
 		System.out.println("You are in the " + player.currentRoom.name + ".\n" + player.currentRoom.longDescription);
-    for(int i = 0; i < player.currentRoom.roomFeatures.size(); i++) {
-			Interactive temp = player.currentRoom.roomFeatures.get(i);
-			System.out.println("This room contains the following item(s) - " + temp.printName() + ": " + temp.printShortDescription());
+		System.out.println();
+		int numberOfFeatures = player.currentRoom.roomFeatures.size();
+		System.out.println("This room contains the following item" + (numberOfFeatures > 1? "s" : "") + ":");
+	    for(int i = 0; i < numberOfFeatures; i++) {
+				Interactive temp = player.currentRoom.roomFeatures.get(i);
+				System.out.println(temp.printName() + " - " + temp.printShortDescription());
+			}
+	    System.out.println("");
+	    System.out.println("Exits: ");
+			for(int i = 0; i < player.currentRoom.getNumExits(); ++i) {
+				System.out.println(player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription  + "\n");
+			}
+			System.out.println("Type \"enter [exit]\", \"look [item]\", \"interact [item]\", or \"quit\".\n");
 		}
-    System.out.println("Exits - ");
-		for(int i = 0; i < player.currentRoom.getNumExits(); ++i)
-		{
-			System.out.println("room: " + player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription  + "\n");
-		}
-		System.out.println("Type 'enter [exit]', 'item', or 'quit'.\n");
-	}
-	
+		
 	private static void printItem(Interactive item) {
 		System.out.println(item.printName() + " - " + item.printShortDescription());
 		System.out.println("\n");
@@ -70,13 +73,13 @@ public class Main {
 	
 	private static void parse(String[] command, Player player) {
 		// gets first string
-		switch(command[0])
+		switch(command[0].toLowerCase())
 		{
 		// handles room switching
 		case "enter":
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
 			{
-				if(player.currentRoom.getExit(i).name.contains(command[1]))
+				if(player.currentRoom.getExit(i).name.contains(command[1].toLowerCase()))
 				{
 								player.currentRoom = player.currentRoom.getExit(i);
 								printRoom(player);
@@ -84,10 +87,18 @@ public class Main {
 				}
 			}
 		break;
+		
+		
 		//handles item
-		case "item":
+		case "look":
 			if (player.currentRoom.hasInteractive(command[1])) {
 				printItem(player.currentRoom.getInteractive(command[1]));
+			}
+		break;
+		
+		case "interact":
+			if(player.currentRoom.hasInteractive(command[1])) {
+				player.currentRoom.interactWithInteractive(command[1]);
 			}
 		break;
 		case "quit":

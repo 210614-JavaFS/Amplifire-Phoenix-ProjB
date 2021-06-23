@@ -23,4 +23,10 @@ public class HongGhost extends Fixture implements Interactive {
 	{
 		super("HongGhost", "Woah, a mysterious floating white figure.", "A lost soul named Hong Wu that can't leave this world until he's found his cologne.");
 	}
+
+	@Override
+	public void Interact() {
+		// TODO Auto-generated method stub
+		
+	}
 }

@@ -23,4 +23,10 @@ public class Vase extends Fixture implements Interactive {
 		super("Vase", "A short description of a vase", "A long description of a vase");
 		
 	}
+
+	@Override
+	public void Interact() {
+		// TODO Auto-generated method stub
+		
+	}
 }
