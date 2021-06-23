@@ -32,3 +32,4 @@ public class Thing extends Fixture implements Interactive{
 	}
 
 }
+
