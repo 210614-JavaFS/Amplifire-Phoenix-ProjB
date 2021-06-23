@@ -27,9 +27,4 @@ public class Skeleton extends Fixture implements Interactive {
 		
 	}
 
-	@Override
-	public void Interact() {
-		// TODO Auto-generated method stub
-		
-	}
 }
