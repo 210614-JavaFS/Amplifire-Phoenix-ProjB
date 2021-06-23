@@ -2,6 +2,7 @@
 package game;
 
 import fixtures.rooms.Bedroom;
+import fixtures.rooms.Dining;
 import fixtures.rooms.FirstFloorBathroom;
 
 import java.util.ArrayList;
@@ -31,13 +32,15 @@ public class RoomManager {
 		UpstairsHallway upstairsHallway = new UpstairsHallway();
 		FirstFloorBathroom dBathroom = new FirstFloorBathroom();
 		LivingRoom livingRoom = new LivingRoom();
+		Dining diningRoom = new Dining();
 
 		foyer.addExit(study);
 		foyer.addExit(upstairsHallway);
 		study.addExit(foyer);
 		foyer.addExit(dBathroom);
+		foyer.addExit(diningRoom);
 		dBathroom.addExit(foyer);
-		//kitchen.addExit(diningRoom, livingRoom);
+		kitchen.addExit(diningRoom);
 		basement.addExit(foyer);
 		upstairsHallway.addExit(foyer);
 		upstairsHallway.addExit(master);
@@ -50,6 +53,8 @@ public class RoomManager {
 		kitchen.addExit(livingRoom);
 		uBathroom.addExit(upstairsHallway);           
 		bedroom.addExit(upstairsHallway); 
+		diningRoom.addExit(kitchen);
+		diningRoom.addExit(foyer);
 		
 		rooms.add(foyer);
 		rooms.add(study);
@@ -60,6 +65,7 @@ public class RoomManager {
 		rooms.add(upstairsHallway);
 		rooms.add(master);
 		rooms.add(dBathroom);
+		rooms.add(diningRoom);
 
 		startingRoom = basement;
 	}
