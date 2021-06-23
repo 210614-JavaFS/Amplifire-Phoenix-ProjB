@@ -1,7 +1,5 @@
 package fixtures.rooms;
 
-import fixtures.objects.Skeleton;
-
 public class Basement extends Room{
 	
 	public Basement() {
