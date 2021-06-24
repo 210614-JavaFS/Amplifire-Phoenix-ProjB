@@ -40,9 +40,9 @@ public class RoomManager {
 		//kitchen.addExit(diningRoom, livingRoom);
 		basement.addExit(foyer);
 		upstairsHallway.addExit(foyer);
+		upstairsHallway.addExit(bedroom);
 		upstairsHallway.addExit(master);
 		upstairsHallway.addExit(uBathroom);
-		upstairsHallway.addExit(bedroom);
 		master.addExit(upstairsHallway);
 		livingRoom.addExit(kitchen);
 		livingRoom.addExit(foyer);
