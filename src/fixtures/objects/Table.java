@@ -5,7 +5,7 @@ import fixtures.Fixture;
 public class Table extends Fixture implements Interactive{
 	
 	public Table() {
-		super("Table", "A dusty old table", "Inching closer to the table there seems to be a note on it");
+		super("Table", "A dusty old table", "Inching closer to the table there seems to be a note on it with something inside");
 	}
 
 	@Override
@@ -25,12 +25,12 @@ public class Table extends Fixture implements Interactive{
 
 	@Override
 	public void Interact() {
-		System.out.println("\n" + "The note reads... GOOD LUCK GETTING OUT \n"
-							+ "You feel something graze your shoulder");
+		System.out.println("\n" + "The note reads... \n"
+							+ "you found your way out \n"
+							+ "There is a key inside of the note. \n");
 		
-		this.longDescription = "You feel disturbed, you must find a way out";
+		this.longDescription = "Must get to the door";
+		
 	}
 	
-	
-
 }
