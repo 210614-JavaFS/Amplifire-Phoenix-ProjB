@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class Sofas extends Fixture implements Interactive {
 
@@ -32,7 +33,7 @@ public class Sofas extends Fixture implements Interactive {
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println("You mindlessly start to sit on it, but the pulsating slime \n"
 				+ "gives you the idea that maybe sitting on it would be a very bad idea.");
 		spoilTheThought();
