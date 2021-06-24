@@ -82,7 +82,7 @@ public class Main {
 				if(player.currentRoom.getExit(i).name.toLowerCase().contains(command[1].toLowerCase())){
 					numberOfRoomsTraversed++;
 					player.currentRoom = player.currentRoom.getExit(i);
-					if(numberOfRoomsTraversed >= 3)
+					if(numberOfRoomsTraversed == 3)
 						player.currentRoom.addInteractive(new Ghost());
 					
 					printRoom(player);
