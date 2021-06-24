@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class TV extends Fixture implements Interactive {
 
@@ -25,7 +26,7 @@ public class TV extends Fixture implements Interactive {
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		// TODO Auto-generated method stub
 		System.out.println("You turn the TV on and the screen illuminates. It's a real estate show! They're showing this young couple around the kitchen of a cabin.");
 	}

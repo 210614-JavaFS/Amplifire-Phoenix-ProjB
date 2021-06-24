@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class Vase extends Fixture implements Interactive {
 
@@ -25,7 +26,7 @@ public class Vase extends Fixture implements Interactive {
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println("You look into the vase, there is debris in the vase that looks like some kind of decayed plants.");
 	}
 }

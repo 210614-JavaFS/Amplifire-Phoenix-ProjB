@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class FlyingBed extends Fixture implements Interactive{
 	
@@ -29,7 +30,7 @@ public class FlyingBed extends Fixture implements Interactive{
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println(message);
 		
 		this.name = "Regular Bed";

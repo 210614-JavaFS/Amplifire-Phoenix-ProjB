@@ -8,7 +8,6 @@ import fixtures.objects.Interactive;
 public class Main {
 
 	public static RoomManager roomManager = new RoomManager();
-	public static boolean willQuit = false;
 	public static Scanner scanner = new Scanner(System.in);
 	
 	private static int numberOfRoomsTraversed;
@@ -23,8 +22,7 @@ public class Main {
 		{
 			String[] input = collectInput();
 			parse(input, player);
-			
-		} while (willQuit == false);
+		} while (player.willQuit == false);
 		scanner.close();
 	}
 		
@@ -103,7 +101,7 @@ public class Main {
 		
 		case "interact":
 			if(player.currentRoom.hasInteractive(command[1])) {
-				player.currentRoom.interactWithInteractive(command[1]);
+				player.currentRoom.interactWithInteractive(command[1], player);
 			}
 		break;
 		
@@ -114,7 +112,7 @@ public class Main {
 		
 		case "quit":
 			System.out.println("Exiting Program.");
-			willQuit = true;
+			player.willQuit = true;
 		break;
 		default:
 			System.out.println("Invalid Input");

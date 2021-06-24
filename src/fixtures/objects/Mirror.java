@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class Mirror extends Fixture implements Interactive {
 
@@ -21,7 +22,7 @@ public class Mirror extends Fixture implements Interactive {
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println("You touch the mirror.  Your hand sinks in, and it is very cold");
 		
 		this.name = "An otherworldly mirror";
