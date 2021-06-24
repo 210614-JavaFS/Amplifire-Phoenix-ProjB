@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class Cologne extends Fixture implements Interactive {
 
@@ -25,7 +26,7 @@ public class Cologne extends Fixture implements Interactive {
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println("Time to musk up.  You apply the cologne.  It's a formidable scent!  It stings the nostrils... in a good way.");
 	}
 }

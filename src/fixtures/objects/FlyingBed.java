@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class FlyingBed extends Fixture implements Interactive{
 	public String printLongDescription() {
@@ -23,7 +24,7 @@ public class FlyingBed extends Fixture implements Interactive{
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println("\n"
 				+ "You carefully walk over to the floating bed..\n"
 				+ "You realize there is a note under it and slowly reach for it.\n"
