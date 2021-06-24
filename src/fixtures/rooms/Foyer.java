@@ -11,7 +11,7 @@ public class Foyer extends Room {
 
 	
 	public Foyer() {
-		super("foyer", "The entrance to the house and the main hall.", "You enter the foyer, the floor boards creek, there is dusty and there are cobwebs all around.");
+		super("foyer", "The entrance to the house and the main hall.", "You enter the foyer, the floor boards creek, it is dusty and there are cobwebs all around.");
 		this.addInteractive(new Vase());
 		this.addInteractive(new Thing());
 		this.addInteractive(new FrontDoor());
