@@ -1,10 +1,11 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class Cupboard extends Fixture implements Interactive{
-	private String message ="You stand up in front of the cupboard. \\nSUDDENLY, the cupboard doors open and.. THE CUPS START FLYING TOWARDS YOU!!\\n\\n"
-			+ "Luckily none of them harmed you.. HA! Take that ghost!! \\n";
+	private String message ="You stand up in front of the cupboard. SUDDENLY, the cupboard doors open and.. THE CUPS START FLYING TOWARDS YOU!!"
+			+ "Luckily none of them harmed you.. HA! Take that ghost!!";
 	
 	public String printLongDescription() {
 		return this.longDescription;
@@ -26,7 +27,7 @@ public class Cupboard extends Fixture implements Interactive{
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		System.out.println(this.message);
 		this.message ="You stare at the empty cupboard and can just remember all the cups flying towards you..";
 	}
