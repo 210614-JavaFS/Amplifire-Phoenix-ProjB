@@ -56,6 +56,7 @@ public class RoomManager {
 		bedroom.addExit(upstairsHallway); 
 		diningRoom.addExit(kitchen);
 		diningRoom.addExit(foyer);
+		foyer.addExit(basement);
 		
 		rooms.add(foyer);
 		rooms.add(study);
