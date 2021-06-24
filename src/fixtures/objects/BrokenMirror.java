@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class BrokenMirror extends Fixture implements Interactive{
 
@@ -44,7 +45,7 @@ public class BrokenMirror extends Fixture implements Interactive{
 	//To give you some ideas, you could interact with a pot and accidentally break it. Then the name could change from "Pot" to "Shattered Pot"
 	//You could then change the short description or long description to fit it's broken state within this method using this.name or this.shortDescription
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 			if (!isBroken) {
 			System.out.println("\n"
 					+ "You touch the mirror.\n"

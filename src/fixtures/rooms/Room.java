@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import fixtures.Fixture;
 import fixtures.objects.Interactive;
+import game.Player;
 
 public abstract class Room extends Fixture{
 
@@ -76,7 +77,7 @@ public abstract class Room extends Fixture{
 		return null;
 	}
 
-	public void interactWithInteractive(String itemName) {
-		getInteractive(itemName).Interact();
+	public void interactWithInteractive(String itemName, Player player) {
+		getInteractive(itemName).Interact(player);
 	}
 }

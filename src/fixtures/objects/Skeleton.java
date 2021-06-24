@@ -1,6 +1,7 @@
 package fixtures.objects;
 
 import fixtures.Fixture;
+import game.Player;
 
 public class Skeleton extends Fixture implements Interactive {
 	
@@ -22,7 +23,7 @@ public class Skeleton extends Fixture implements Interactive {
 	}
 
 	@Override
-	public void Interact() {
+	public void Interact(Player player) {
 		
 		System.out.println("When you get closer you see a note that says, \"Find a key to escape the Haunted House!\"");
 		
