@@ -26,10 +26,12 @@ public class Table extends Fixture implements Interactive{
 	
 	@Override
 	public void Interact(Player player) {
-		System.out.println("\n" + "The note reads... GOOD LUCK GETTING OUT \n"
-							+ "You feel something graze your shoulder. " + " You picked up a key.");
+		System.out.println("\n" + "The note reads...  \n"
+							+ "you found your way out \n \n"
+							+ "There is a key inside of the note. \n" 
+							+ "You pick up the key.");
 		player.hasKey = true;
-		this.longDescription = "You feel disturbed, you must find a way out";
+		this.longDescription = "Must get to the door now.";
 	}
 	
 }
