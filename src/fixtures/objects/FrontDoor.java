@@ -34,7 +34,7 @@ public class FrontDoor extends Fixture implements Interactive {
 		}
 		else
 		{
-			System.out.println("You open the door and leave the house.");
+			System.out.println("You try to open the door but it won't budge.");
 			
 		}
 		
