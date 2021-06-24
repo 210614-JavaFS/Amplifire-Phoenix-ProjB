@@ -2,12 +2,15 @@ package game;
 
 import java.util.Scanner;
 
+import fixtures.objects.Ghost;
 import fixtures.objects.Interactive;
 
 public class Main {
 
 	public static RoomManager roomManager = new RoomManager();
 	public static Scanner scanner = new Scanner(System.in);
+	
+	private static int numberOfRoomsTraversed;
 	
 	public static void main(String[] args) {
 	
@@ -17,7 +20,6 @@ public class Main {
 		printRoom(player);
 		do
 		{
-			
 			String[] input = collectInput();
 			parse(input, player);
 		} while (player.willQuit == false);
@@ -38,7 +40,7 @@ public class Main {
 				System.out.println(temp.printName() + " - " + temp.printShortDescription());
 			}
 	    System.out.println("");
-	    System.out.println("Connecting rooms: ");
+	    System.out.println("Connected rooms: ");
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i) {
 				System.out.println(player.currentRoom.getExit(i).name + " - " + player.currentRoom.getExit(i).shortDescription);
 			}
@@ -73,17 +75,18 @@ public class Main {
 	
 	private static void parse(String[] command, Player player) {
 		// gets first string
-		switch(command[0].toLowerCase())
-		{
+		switch(command[0].toLowerCase()){
 		// handles room switching
 		case "enter":
-			for(int i = 0; i < player.currentRoom.getNumExits(); ++i)	
-			{
-				if(player.currentRoom.getExit(i).name.toLowerCase().contains(command[1].toLowerCase()))
-				{
-								player.currentRoom = player.currentRoom.getExit(i);
-								printRoom(player);
-								return;
+			for(int i = 0; i < player.currentRoom.getNumExits(); ++i){
+				if(player.currentRoom.getExit(i).name.toLowerCase().contains(command[1].toLowerCase())){
+					numberOfRoomsTraversed++;
+					player.currentRoom = player.currentRoom.getExit(i);
+					if(numberOfRoomsTraversed >= 3)
+						player.currentRoom.addInteractive(new Ghost());
+					
+					printRoom(player);
+					return;
 				}
 			}
 		break;
@@ -101,6 +104,12 @@ public class Main {
 				player.currentRoom.interactWithInteractive(command[1], player);
 			}
 		break;
+		
+		case "":
+			System.out.println();
+			printRoom(player);
+		break;
+		
 		case "quit":
 			System.out.println("Exiting Program.");
 			player.willQuit = true;
