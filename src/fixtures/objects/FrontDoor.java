@@ -30,6 +30,7 @@ public class FrontDoor extends Fixture implements Interactive {
 		if(player.hasKey == true)
 		{
 		System.out.println("You open the door and leave the house.");
+		System.out.println("Congrats! You've made it out alive!");
 		player.willQuit = true;
 		}
 		else
