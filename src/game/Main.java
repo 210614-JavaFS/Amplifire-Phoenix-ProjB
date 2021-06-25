@@ -78,6 +78,10 @@ public class Main {
 		switch(command[0].toLowerCase()){
 		// handles room switching
 		case "enter":
+			if(command.length < 2) {
+				System.out.println("You need a room to enter. Trying entering a room");
+				break;
+			}			
 			for(int i = 0; i < player.currentRoom.getNumExits(); ++i){
 				if(player.currentRoom.getExit(i).name.toLowerCase().contains(command[1].toLowerCase())){
 					numberOfRoomsTraversed++;
