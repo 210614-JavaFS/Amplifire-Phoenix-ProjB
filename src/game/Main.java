@@ -94,12 +94,20 @@ public class Main {
 		
 		//handles item
 		case "look":
+			if(command.length < 2) {
+				System.out.println("You need a target to look at. Trying looking at an object");
+				break;
+			}
 			if (player.currentRoom.hasInteractive(command[1])) {
 				printItem(player.currentRoom.getInteractive(command[1]));
 			}
 		break;
 		
 		case "interact":
+			if(command.length < 2) {
+				System.out.println("You need a target to interact with. Trying interacting with an object");
+				break;
+			}
 			if(player.currentRoom.hasInteractive(command[1])) {
 				player.currentRoom.interactWithInteractive(command[1], player);
 			}
